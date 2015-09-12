@@ -11,6 +11,7 @@
 		7EC5D5151BA3CB9400EFC496 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5D5141BA3CB9400EFC496 /* ViewController.swift */; };
 		7EC5D5181BA3CB9400EFC496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7EC5D5161BA3CB9400EFC496 /* Main.storyboard */; };
 		7EC5D51A1BA3CB9400EFC496 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7EC5D5191BA3CB9400EFC496 /* Assets.xcassets */; };
+		7EC5D5221BA3E76900EFC496 /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC5D5211BA3E76900EFC496 /* ListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		7EC5D5171BA3CB9400EFC496 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7EC5D5191BA3CB9400EFC496 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7EC5D51B1BA3CB9400EFC496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7EC5D5211BA3E76900EFC496 /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				7EC5D5121BA3CB9400EFC496 /* AppDelegate.swift */,
 				7EC5D5141BA3CB9400EFC496 /* ViewController.swift */,
+				7EC5D5211BA3E76900EFC496 /* ListTableViewController.swift */,
 				7EC5D5161BA3CB9400EFC496 /* Main.storyboard */,
 				7EC5D5191BA3CB9400EFC496 /* Assets.xcassets */,
 				7EC5D51B1BA3CB9400EFC496 /* Info.plist */,
@@ -130,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EC5D5221BA3E76900EFC496 /* ListTableViewController.swift in Sources */,
 				7EC5D5151BA3CB9400EFC496 /* ViewController.swift in Sources */,
 				7EC5D5131BA3CB9400EFC496 /* AppDelegate.swift in Sources */,
 			);
