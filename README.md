@@ -22,6 +22,10 @@ tvOS 9~ Experiments - New OS - appleTv.
 
 Tested on tvOS 9.0 Simulator.
 
+## Important
+
+Get the `master` branch for XCode 8 / Swift 3 updated project.
+
 
 ## Usage
 
