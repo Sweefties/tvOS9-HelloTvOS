@@ -43,7 +43,7 @@ extension UISetView {
         // label text
         HeadLabel.text = "Hello tvOS!"
         HeadLabel.sizeToFit()
-        HeadLabel.textColor = UIColor.darkGrayColor()
+        HeadLabel.textColor = UIColor.darkGray
         // button tag
         buttonTouch.tag = 0
         // navigation title
@@ -52,9 +52,11 @@ extension UISetView {
     /// set gesture recognizer
     func setPressGesture() {
         // define action for `Play/Pause` apple tv remote button
-        press.addTarget(self, action: "pressed:")
+        press.addTarget(self, action: #selector(ViewController.pressed(_:)))
         press.delegate = self
-        press.allowedPressTypes = [UIPressType.PlayPause.rawValue]
+
+        press.allowedPressTypes = [NSNumber(value: UIPressType.playPause.rawValue)]
+        //press.allowedPressTypes = [NSNumber(UIPressType.playPause.rawValue)]
         self.view.addGestureRecognizer(press)
     }
 }
@@ -65,22 +67,22 @@ typealias UIActions = ViewController
 extension UIActions {
 
     /// Change HeadLabel by Button Action
-    @IBAction func handleMe(sender: AnyObject) {
+    @IBAction func handleMe(_ sender: AnyObject) {
         if sender.tag == 0 {
             HeadLabel.text = "Ready to go!"
-            HeadLabel.textColor = UIColor.greenColor()
+            HeadLabel.textColor = UIColor.green
             HeadLabel.sizeToFit()
             buttonTouch.tag = 1
         }else{
             HeadLabel.text = "Hello tvOS!"
-            HeadLabel.textColor = UIColor.darkGrayColor()
+            HeadLabel.textColor = UIColor.darkGray
             HeadLabel.sizeToFit()
             buttonTouch.tag = 0
         }
     }
     /// Segue Navigation -> Show ListTableViewController with Segue identifier
-    @IBAction func showTableView(sender: AnyObject) {
-        self.performSegueWithIdentifier(SegueID, sender: self)
+    @IBAction func showTableView(_ sender: AnyObject) {
+        self.performSegue(withIdentifier: SegueID, sender: self)
     }
 }
 
@@ -90,15 +92,15 @@ typealias UIGestures = ViewController
 extension UIGestures : UIGestureRecognizerDelegate {
 
     /// Simple Press PlayPause action - gesture recognizer
-    func pressed(recognizer:UITapGestureRecognizer) {
-        if recognizer.enabled {
+    func pressed(_ recognizer:UITapGestureRecognizer) {
+        if recognizer.isEnabled {
             HeadLabel.text = "Play Pause Pressed!"
-            HeadLabel.textColor = UIColor.redColor()
+            HeadLabel.textColor = UIColor.red
             HeadLabel.sizeToFit()
         }
     }
     /// Gestures simultaneous recognizer Delegate
-    func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
     }
 }

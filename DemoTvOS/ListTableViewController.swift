@@ -12,15 +12,15 @@ class ListTableViewController: UITableViewController {
 
     // MARK: - Properties
     let cellID = "defaultCell"
-    let list:[String] = ["iOS 9",
-        "WatchOS 2",
-        "tvOS",
-        "iPhone 6S",
+    let list:[String] = ["iOS 10",
+        "WatchOS 3",
+        "tvOS 10",
+        "iPhone 7",
         "iPad Pro",
         "Pencil",
         "Smart Keyboard",
-        "Xcode 7",
-        "Swift 2",
+        "Xcode 8",
+        "Swift 3",
         "..and more"
     ]
     
@@ -45,22 +45,22 @@ typealias ListTableViewDataSource = ListTableViewController
 extension ListTableViewDataSource {
 
     /// Number of Sections
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     /// Number of Rows
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count ?? 0
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return list.count
     }
     
     /// Reuse Cell for Row
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellID, forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
         
         // Configure the cell...
-        cell.textLabel?.text = "\(list[indexPath.row])"
-        cell.detailTextLabel?.text = "\(indexPath.row)"
+        cell.textLabel?.text = "\(list[(indexPath as NSIndexPath).row])"
+        cell.detailTextLabel?.text = "\((indexPath as NSIndexPath).row)"
         return cell
     }
 }
